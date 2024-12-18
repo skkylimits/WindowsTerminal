@@ -6,16 +6,16 @@ This is my attempt to automate and streamline my windows terminal across differe
 
 ### powershell
 
+Download it in a directory of choise and run it locally.
 ```powershell
-
+.\SetWindowsTerminalSettings.ps1
 ```
 
-### wget
+### curl
 
 ```bash
-
+curl -o "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" https://raw.githubusercontent.com/skkylimits/WindowsTerminal/main/settings.json; echo "Settings downloaded! Restart Windows Terminal or reload the profile."
 ```
-
 
 ## TODO
 

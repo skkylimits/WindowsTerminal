@@ -24,3 +24,4 @@ curl -o "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8weky
 - [ ] command line arguments https://learn.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows
 - [ ] https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
 - [ ] Colortool Validate your colorscheme https://github.com/microsoft/terminal/tree/main/src/tools/ColorTool
+- [ ] Fix the warnings

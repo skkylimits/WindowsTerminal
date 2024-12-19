@@ -2,11 +2,13 @@
 
 This is my attempt to automate and streamline my windows terminal across different machines.
 
+In conquest of trying to mimic the browser experience and keybinds to windows terminal
+
 ## Install
 
 ### powershell
 
-Download it in a directory of choise and run it locally.
+Download it in a directory of choice and run it locally.
 ```powershell
 .\SetWindowsTerminalSettings.ps1
 ```

@@ -1,22 +1,19 @@
 # Refer to https://learn.microsoft.com/en-us/windows/terminal/search for more useful settings & tricks
-# todo: go trough shell integrations -> https://learn.microsoft.com/en-us/windows/terminal/tutorials/shell-integration
-# and cascadia code https://learn.microsoft.com/en-us/windows/terminal/cascadia-code
-# command line arguments https://learn.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows
-# enable windows terminal preview
-# https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
-# Colortool Validate your colorscheme https://github.com/microsoft/terminal/tree/main/src/tools/ColorTool
 
 # Save JSON-config as string
 $customSettings = @'
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
     [   
        // copy
         { "command": { "action": "copy", "singleLine": false }, "id": "User.copy.644BA8F2", "keys": "ctrl+c" },
 
         // paste
-
         { "command": "paste", "id": "User.paste", "keys": "ctrl+v" },
 
-        //window
+        // window
         { "command": { "action": "newWindow" }, "id": "Terminal.OpenNewWindow", "keys": "ctrl+n" },
         { "command": { "action": "movePane", "window": "new" }, "keys": "shift+alt+n" },
         { "command": { "action": "moveTab", "window": "new" }, "keys": "shift+alt+t" },
@@ -25,7 +22,7 @@ $customSettings = @'
         { "command": { "action": "newWindow", "profile": "UUB" }, "keys": "shift+alt+3" },
         { "command": "toggleAlwaysOnTop", "keys": "alt+l" },
 
-        //tab
+        // tab
         { "command": "newTab", "keys": "ctrl+t" },
         { "command": { "action": "newTab", "profile": "Command Prompt" }, "keys": "ctrl+1" },
         { "command": { "action": "newTab", "profile": "Command Prompt", "elevate": true }, "keys": "ctrl+shift+1" },
@@ -39,13 +36,6 @@ $customSettings = @'
         { "command": { "action": "nextTab" }, "keys": "ctrl+tab" },
         { "command": { "action": "prevTab" }, "keys": "ctrl+shift+tab" },
         { "command": "openTabRenamer", "keys": "shift+f2" },
-
-        // close windows/tab/pane
-        { "command": "closePane", "id": "User.closePane", "keys": "ctrl+w" },
-        { "command": "closeOtherPanes", "keys": "ctrl+alt+w" },
-        { "command": { "action": "closeOtherTabs" }, "keys": "ctrl+shift+w" },
-        { "command": { "action": "restoreLastClosed" }, "keys": "ctrl+shift+t" },
-        { "command": "quit", "keys": "alt+f4" },
 
         //pane
         { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "id": "User.splitPane.A6751878", "keys": "alt+shift+d" },
@@ -72,6 +62,13 @@ $customSettings = @'
         { "command": { "action": "swapPane", "direction": "down" }, "id": "User.swapPane.F747588A", "keys": "ctrl+alt+down" },
         { "command": { "action": "swapPane", "direction": "left" }, "id": "User.swapPane.2A0DA8E0", "keys": "ctrl+alt+left" },
         { "command": { "action": "swapPane", "direction": "right" }, "id": "User.swapPane.87C324ED", "keys": "ctrl+alt+right" },
+
+        // close window/tab/pane
+        { "command": "closePane", "id": "User.closePane", "keys": "ctrl+w" },
+        { "command": "closeOtherPanes", "keys": "ctrl+alt+w" },
+        { "command": { "action": "closeOtherTabs" }, "keys": "ctrl+shift+w" },
+        { "command": { "action": "restoreLastClosed" }, "keys": "ctrl+shift+t" },
+        { "command": "quit", "keys": "alt+f4" },
 
         // fullscreen
         { "command": "toggleFullscreen", "id": "Terminal.ToggleFullscreen", "keys": "alt+enter" },
@@ -209,6 +206,111 @@ $customSettings = @'
         { "name": null, "command": { "action": "addMark" } },
         { "name": null, "command": "clearAllMarks" }
     ],
+    "centerOnLaunch": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+    "initialCols": 150,
+    "initialPosition": ",",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": {},
+        "list": 
+        [
+            {
+                "colorScheme": "Campbell Powershell",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "adjustIndistinguishableColors": "never",
+                "colorScheme": "13",
+                "experimental.retroTerminalEffect": false,
+                "experimental.rightClickContextMenu": true,
+                "font": 
+                {
+                    "face": "Cascadia Mono"
+                },
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "historySize": 9999,
+                "intenseTextStyle": "bright",
+                "name": "UUB",
+                "showMarksOnScrollbar": false,
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc",
+                "startingDirectory": "%USERPROFILE%",
+                "tabTitle": "UUB",
+                "useAcrylic": false
+            },
+            {
+                "guid": "{de6b2d81-bc31-5c7c-9e9d-a123b2007673}",
+                "hidden": false,
+                "name": "Uub",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
+                "hidden": false,
+                "name": "Ubuntu 24.04.1 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
+                "hidden": true,
+                "name": "Ubuntu-24.04",
+                "source": "Windows.Terminal.Wsl"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#212225",
+            "black": "#202124",
+            "blue": "#CC342B",
+            "brightBlack": "#969896",
+            "brightBlue": "#CC342B",
+            "brightCyan": "#CC342B",
+            "brightGreen": "#2AE673",
+            "brightPurple": "#A36AC7",
+            "brightRed": "#CC342B",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFF508",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#CC342B",
+            "foreground": "#FFFFFF",
+            "green": "#2AE673",
+            "name": "13",
+            "purple": "#A36AC7",
+            "red": "#CC342B",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#FFF508"
+        }
+    ],
+    "themes": [],
+    "useAcrylicInTabRow": false
+}
 '@
 
 # Path to Windows Terminal settings.json
